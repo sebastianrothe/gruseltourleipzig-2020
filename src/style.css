@@ -1,0 +1,144 @@
+/*
+ Theme Name:   Gruseltour Berlin Eighteen
+ Theme URI:    https://gruseltour-berlin.de
+ Description:  Gruseltour Berlin Eighteen Theme
+ Author:       Sebastian Rothe
+ Author URI:   https://github.com/sebastianrothe
+ Template:     twentyseventeen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  gruseltour-berlin-eighteen
+*/
+
+@media screen and (min-width: 48em) {
+  .site .site-header .site-navigation-fixed.navigation-top {
+    position: absolute;
+  }
+}
+
+.lyte-wrapper {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media screen and (min-width: 576px) {
+  .lyte-wrapper {
+    width: auto !important;
+  }
+}
+
+.cdsROW.narrow #CDSROWLOGO203.logo {
+  padding-top: 15px;
+}
+
+.entry-content [class^='wp-block-']:not(.wp-block-gallery) figcaption {
+  position: relative;
+  bottom: 40px;
+  width: 100%;
+  max-height: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+  overflow: auto;
+  padding: 0 10px 9px 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3) 70%, transparent);
+}
+
+.wpforms-form .wpforms-field-hp {
+  display: none !important;
+  position: absolute !important;
+  left: -9000px !important;
+}
+
+.wpforms-field-container .wpforms-field {
+  padding-bottom: 1rem;
+}
+
+.wpforms-field-container .wpforms-error {
+  color: goldenrod;
+}
+
+.wpforms-field-label.wpforms-label-hide {
+  display: none;
+}
+
+.wpforms-field.wpforms-field-checkbox ul {
+  list-style: none;
+}
+
+.wpforms-field-label-inline {
+  display: inline;
+}
+
+.site-footer .wrap .site-info {
+  max-width: 100%;
+  width: 100%;
+}
+
+.page .panel-content .entry-title,
+.site-title {
+  text-transform: none;
+  font-size: 2em;
+  letter-spacing: normal;
+}
+
+@media screen and (min-width: 30em) {
+  .site-branding {
+    padding: 1em 0;
+  }
+}
+
+.custom-header a img {
+  width: 100%;
+}
+
+.site-branding {
+  padding: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .wp-block-gallery.min-width-200 .blocks-gallery-item {
+    margin-right: 0;
+  }
+}
+
+.wp-block-gallery.min-width-200 .blocks-gallery-item {
+  min-width: 200px;
+}
+
+.site-footer .widget-area {
+  padding: 0;
+}
+
+.custom-html-widget .socialmedia--list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.custom-html-widget .socialmedia--list li {
+  padding-right: 1em;
+}
+
+.woocommerce-checkout .shop_table {
+  background-color: #3c3c3c;
+}
+
+.woocommerce-error {
+  background-color: rgba(178, 34, 34, 0.5);
+}
+
+.woocommerce-info {
+  background-color: rgba(65, 105, 225, 0.7);
+}
+
+.after-checkout--download {
+  font-size: 1rem;
+  color: #eee;
+}
