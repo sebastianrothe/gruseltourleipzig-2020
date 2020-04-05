@@ -13,12 +13,17 @@
 
     # this is for www
     RewriteCond %{HTTP_HOST} ^www\.
-    RewriteRule ^ https://gruseltour-berlin.de%{REQUEST_URI} [NE,L,R]
+    RewriteRule ^ https://gruseltour-leipzig.de%{REQUEST_URI} [NE,L,R]
 </IfModule>
 # END SSL Redirect
 
-# Special Redirections
-Redirect 307 /adina https://gruseltour-berlin.de/produkt/gruseltour-berlin-ticket/
+# First rewrite any request to the wrong domain to use the correct one (here without www.)
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ https://gruseltour-leipzig.de%{REQUEST_URI} [L,R=301]
+
+# Now, rewrite to HTTPS:
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://gruseltour-leipzig.de%{REQUEST_URI} [L,R=301]
 
 # Protect the htaccess file
 <Files .htaccess*>
@@ -31,6 +36,34 @@ Redirect 307 /adina https://gruseltour-berlin.de/produkt/gruseltour-berlin-ticke
     Order Allow,Deny
     Deny from all
 </Files>
+
+# enable Keep-Alive
+# maybe not enough, because access to apache.conf is not allowed
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+</ifModule>
+
+# Redirect some pages, because they are old
+Redirect 301 /informationen /fragen
+Redirect 301 /haeufige-fragen /fragen
+Redirect 301 /faq /fragen
+#Redirect 301 /wave-gotik-treffen-2015-wgt /anmeldung
+#Redirect 301 /wave-gotik-treffen-wgt-2014 /anmeldung
+#Redirect 301 /wave-gotik-treffen /wgt-2018
+Redirect 307 /wgt /anmeldung
+Redirect 307 /wgt-2018 /anmeldung
+#Redirect 301 /spenden-gruseltour-20-12 /anmeldung
+Redirect 301 /kontakt /impressum
+Redirect 301 /gruselfakten/du-magst-es-dich-zu-gruseln-wir-auch /gruselfakten
+#Redirect 307 /wir-erwarten-euch-an-halloween-2015 /halloween-2018
+#Redirect 307 /halloween /halloween-2018
+#Redirect 307 /walpurgisnacht /walpurgisnacht-2018
+Redirect 307 /jobs https://gruseltour-berlin.de/jobs/
+
+# Deny spam IP
+Order allow,deny
+    Deny from 46.161.9.32
+Allow from all
 
 # Apache Server Configs v3.2.1 | MIT License
 # https://github.com/h5bp/server-configs-apache
@@ -666,8 +699,7 @@ AddDefaultCharset utf-8
 # https://blogs.msdn.microsoft.com/ieinternals/2014/08/18/strict-transport-security/
 
  <IfModule mod_headers.c>
-     Header always set Strict-Transport-Security "max-age=16070400"
-     #; includeSubDomains"
+     Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains"
 
 #     # (1) or if HSTS preloading is desired (respect (2) for current requirements):
 #     # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
@@ -1252,9 +1284,7 @@ FileETag None
     RewriteRule ^(.+)\.(\w+)\.(bmp|css|cur|gif|ico|jpe?g|m?js|png|svgz?|webp|webmanifest)$ $1.$3 [L]
 </IfModule>
 
-#
-# Apache Server config ending
-#
+### END APACHE CONFIG
 
 # Block the include-only files.
 <IfModule mod_rewrite.c>
@@ -1314,5 +1344,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
 # END WordPress
