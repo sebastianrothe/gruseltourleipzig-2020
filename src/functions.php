@@ -19,7 +19,7 @@ function gtberlin_2018_enqueue_styles() {
 /**
 * WPO WCPDF adjustments functions and filters.
 */
-require get_stylesheet_directory() . '/inc/wpo_wcpdf-functions.php';
+// require get_stylesheet_directory() . '/inc/wpo_wcpdf-functions.php';
 
 /**
 * Gruseltour Berlin adjustments functions and filters.
