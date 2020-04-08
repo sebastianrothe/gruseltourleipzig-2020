@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Seventeen: Gruseltour Berlin Adjustments
+ * Twenty Seventeen: Gruseltour Leipzig Adjustments
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
