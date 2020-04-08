@@ -11,11 +11,14 @@
 ?>
 <div class="site-info">
 	<?php
-if (function_exists('the_privacy_policy_link')) {
-    the_privacy_policy_link('', '<span role="separator" aria-hidden="true"></span>');
-}
-?>
-	<a href="/impressum/" class="imprint">Impressum</a>
-	<span role="separator" aria-hidden="true"></span>
-	<span>Gruseltour Leipzig 👻 is made with ❤️ and ☕ in Leipzig. © <?php echo date("Y"); ?></span>
+	if ( function_exists( 'the_privacy_policy_link' ) ) {
+		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
+	}
+	?>
+	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyseventeen' ) ); ?>" class="imprint">
+		<?php
+			/* translators: %s: WordPress */
+		printf( __( 'Proudly powered by %s', 'twentyseventeen' ), 'WordPress' );
+		?>
+	</a>
 </div><!-- .site-info -->
