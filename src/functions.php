@@ -1,6 +1,6 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'gtberlin_2018_enqueue_styles' );
-function gtberlin_2018_enqueue_styles() {
+add_action( 'wp_enqueue_scripts', 'gtleipzig_2020_enqueue_styles' );
+function gtleipzig_2020_enqueue_styles() {
     $parent_style = 'twentyseventeen-style';
 
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
@@ -22,6 +22,6 @@ function gtberlin_2018_enqueue_styles() {
 // require get_stylesheet_directory() . '/inc/wpo_wcpdf-functions.php';
 
 /**
-* Gruseltour Berlin adjustments functions and filters.
+* Gruseltour Leipzig adjustments functions and filters.
 */
-require get_stylesheet_directory() . '/inc/gtberlin-functions.php';
+require get_stylesheet_directory() . '/inc/gtleipzig-functions.php';
