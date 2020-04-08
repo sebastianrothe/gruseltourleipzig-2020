@@ -12,16 +12,6 @@ function gtleipzig_2020_enqueue_styles() {
 }
 
 /**
- * WooCommerce adjustments functions and filters.
- */
-// require get_stylesheet_directory() . '/inc/woocommerce-functions.php';
-
-/**
-* WPO WCPDF adjustments functions and filters.
-*/
-// require get_stylesheet_directory() . '/inc/wpo_wcpdf-functions.php';
-
-/**
 * Gruseltour Leipzig adjustments functions and filters.
 */
 require get_stylesheet_directory() . '/inc/gtleipzig-functions.php';
