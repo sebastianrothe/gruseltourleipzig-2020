@@ -12,7 +12,7 @@
 <div class="custom-header">
 
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="https://res.cloudinary.com/gruseltourleipzig/image/upload/q_auto/f_auto/v1534451312/123.png" alt="Gruseltour Leipzig - Bist du bereit ?" />
+			<img src="https://res.cloudinary.com/gruseltourleipzig/image/upload/q_auto/f_auto/v1508406596/cropped-cropped-grusel-poster-a3-e1480026424555-1_cgpp1f.jpg" alt="Gruseltour Leipzig - Bist du bereit für die außergewöhnliche Stadtführung?"/>>
 		</a>
 
 		<div class="custom-header-media">
