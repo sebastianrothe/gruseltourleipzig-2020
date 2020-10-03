@@ -10,7 +10,7 @@
 add_action('wp_enqueue_scripts', 'update_jquery');
 function update_jquery() {
     wp_deregister_script('jquery');
-    wp_register_script('jquery', ("https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"), false, '3.4.1', true);
+    wp_register_script('jquery', ("https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"), false, '3.5.1', true);
 	wp_enqueue_script('jquery');
 }
 
@@ -110,7 +110,7 @@ function load_font_awesome()
         return;
     }
 
-    wp_register_script('font-awesome-5', 'https://kit.fontawesome.com/310e87366c.js', false, '5.13.0', true);
+    wp_register_script('font-awesome-5', 'https://kit.fontawesome.com/310e87366c.js', false, '5.15.0', true);
     wp_enqueue_script('font-awesome-5');
 }
 
